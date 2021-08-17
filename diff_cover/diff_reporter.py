@@ -188,6 +188,19 @@ class GitDiffReporter(BaseDiffReporter):
         # If no lines modified, return an empty list
         return diff_dict.get(src_path, [])
 
+    def song_test(self, src_path):
+        """
+        See base class docstring.
+        """
+
+        # Get the diff dictionary (cached)
+        diff_dict = self._git_diff()
+
+        # Look up the modified lines for the source file
+        # If no lines modified, return an empty list
+        return diff_dict.get(src_path, [])
+
+
     def _get_included_diff_results(self):
         """
         Return a list of stages to be included in the diff results.
